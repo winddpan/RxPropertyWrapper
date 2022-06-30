@@ -1,19 +1,10 @@
-# RxPropertyWrapper
+import XCTest
+import RxSwift
+import RxCocoa
+import RxRelay
+@testable import RxPropertyWrapper
 
-```
-    private let oldNumberSubject = PublishSubject<Int>()
-    var oldNumberObservable: Observable<Int> {
-        oldNumberSubject.asObserver()
-    }    
-```
-->
-```
-    @RxPublishRelay var newNumberObservable: Observable<Int>
-```
-
-# Usage
-
-```
+final class RxPropertyWrapperTests: XCTestCase {
     @RxPublishRelay var a: Observable<Int>
     @RxPublishSubject var b: Observable<Int>
 
@@ -25,4 +16,6 @@
     
     @RxBehaviorSubject(value: "default 1", onErrorJustReturn: "on error 1") var nameDriver: Driver<String>
     @RxBehaviorRelay(value: "default 2", onErrorJustReturn: "on error 2") var name2Driver: Driver<String>
-```
+
+    func testExample() throws {}
+}
